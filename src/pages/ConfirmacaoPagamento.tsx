@@ -28,6 +28,19 @@ const ConfirmacaoPagamento = () => {
             </p>
           )}
 
+          {/* Texto atualizado com link correto */}
+          <p className="text-sm text-gray-700">
+            Após efetuar o pagamento, envie o comprovante para{" "}
+            <a
+              href="https://wa.me/5535997362964"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-rose-600 hover:underline"
+            >
+              https://wa.me/5535997362964
+            </a>
+          </p>
+
           <Button
             variant="ghost"
             className="flex items-center gap-2"
