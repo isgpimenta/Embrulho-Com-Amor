@@ -136,114 +136,24 @@ const CestasPersonalizadas = () => {
 
           {/* Customization Panel */}
           <div className="space-y-6">
-            {/* Theme Selection */}
-            <Card>
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2">
-                  <Palette className="w-5 h-5 text-gray-500" />
-                  Tema da Cesta
-                </CardTitle>
-                <CardDescription>Escolha o estilo que combina com a ocasião</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <div className="grid grid-cols-2 gap-3">
-                  {basketThemes.map((theme) => {
-                    const Icon = theme.icon;
-                    return (
-                      <button
-                        key={theme.id}
-                        onClick={() => setSelectedTheme(theme)}
-                        className={cn(
-                          "p-4 rounded-xl border-2 transition-all duration-300 flex flex-col items-center gap-2",
-                          selectedTheme.id === theme.id
-                           ? "border-gray-500 bg-gray-100 shadow-md scale-105"
-                            : "border-gray-200 hover:border-gray-300 hover:bg-gray-50"
-                        )}
-                      >
-                        <div className={cn(
-                          "w-12 h-12 rounded-lg flex items-center justify-center",
-                          theme.accent
-                        )}>
-                          <Icon className="w-6 h-6 text-white" />
-                        </div>
-                        <span className="font-medium text-sm">{theme.name}</span>
-                      </button>
-                    );
-                  })}
-                </div>
-              </CardContent>
-            </Card>
-
-            {/* Ribbon Selection */}
-            <Card>
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2">
-                  <Sparkles className="w-5 h-5 text-amber-500" />
-                  Laço e Detalhes
-                </CardTitle>
-                <CardDescription>Personalize os detalhes da sua cesta</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <div className="grid grid-cols-2 gap-3 mb-4">
-                  {ribbons.map((ribbon) => (
-                    <button
-                      key={ribbon.id}
-                      onClick={() => setSelectedRibbon(ribbon)}
-                      className={cn(
-                        "p-3 rounded-lg border-2 transition-all duration-300 flex items-center gap-2",
-                        selectedRibbon.id === ribbon.id
-                         ? "border-gray-500 bg-gray-100 shadow-md"
-                          : "border-gray-200 hover:border-gray-300"
-                      )}
-                    >
-                      <div className={cn("w-8 h-3 rounded-full", ribbon.color)} />
-                      <span className="text-sm font-medium">{ribbon.name}</span>
-                    </button>
-                  ))}
-                </div>
-
-                {/* Message Toggle */}
-                <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
-                  <div className="flex items-center gap-2">
-                    <Star className="w-4 h-4 text-amber-500" />
-                    <span className="text-sm font-medium">Incluir mensagem</span>
-                  </div>
-                  <button
-                    onClick={() => setHasMessage(!hasMessage)}
-                    className={cn(
-                      "w-12 h-6 rounded-full transition-colors",
-                      hasMessage? "bg-gray-500" : "bg-gray-300"
-                    )}
-                  >
-                    <div className={cn(
-                      "w-5 h-5 rounded-full bg-white shadow-md transition-transform",
-                      hasMessage? "translate-x-7" : "translate-x-1"
-                    )} />
-                  </button>
-                </div>
-              </CardContent>
-            </Card>
-
             {/* Personal Message */}
-            {hasMessage && (
-              <Card>
-                <CardHeader>
-                  <CardTitle className="flex items-center gap-2">
-                    <Heart className="w-5 h-5 text-gray-500" />
-                    Mensagem Pessoal
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <textarea
-                    value={personalMessage}
-                    onChange={(e) => setPersonalMessage(e.target.value)}
-                    placeholder="Escreva uma mensagem especial..."
-                    className="w-full px-4 py-3 rounded-lg border-2 border-gray-200 focus:border-gray-500 focus:outline-none resize-none text-gray-700"
-                    rows={3}
-                  />
-                </CardContent>
-              </Card>
-            )}
+            <Card>
+              <CardHeader>
+                <CardTitle className="flex items-center gap-2">
+                  <Heart className="w-5 h-5 text-gray-500" />
+                  Mensagem Pessoal
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <textarea
+                  value={personalMessage}
+                  onChange={(e) => setPersonalMessage(e.target.value)}
+                  placeholder="Escreva uma mensagem especial..."
+                  className="w-full px-4 py-3 rounded-lg border-2 border-gray-200 focus:border-gray-500 focus:outline-none resize-none text-gray-700"
+                  rows={3}
+                />
+              </CardContent>
+            </Card>
 
             {/* Action Button */}
             <Button
