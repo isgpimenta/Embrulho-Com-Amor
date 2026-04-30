@@ -24,7 +24,7 @@ const basketThemes = [
   {
     id: "minimal",
     name: "Cesta Três",
-    price: "R$ 149,90",
+    price: "R$ 270,00",
     colors: ["#e5e7eb", "#d1d5db"],
     icon: Palette,
     image: "/cesta 3.jpeg",
