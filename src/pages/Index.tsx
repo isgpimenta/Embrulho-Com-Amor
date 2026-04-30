@@ -26,13 +26,6 @@ const Index = () => {
             Escolher Cesta
             <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
           </Button>
-          <Button
-            size="lg"
-            variant="outline"
-            className="border-gray-300 text-gray-600 hover:bg-gray-50 px-8 py-6 text-lg"
-          >
-            Ver Exemplos
-          </Button>
         </div>
         <Card className="max-w-2xl mx-auto border-0 shadow-xl">
           <CardHeader>
