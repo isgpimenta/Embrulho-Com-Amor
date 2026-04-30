@@ -11,6 +11,11 @@ const Index = () => {
           <Gift className="w-8 h-8 text-rose-500" />
           <span className="text-lg font-medium text-slate-700">Presentes que emocionam</span>
         </div>
+        <img 
+          src="/logo-embrulho.jpeg" 
+          alt="Logo Embrulho Com Amor" 
+          className="mx-auto mt-4 w-48 h-auto object-contain rounded-lg"
+        />
         <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-clip-text text-transparent text-black">
           Embrulho Com Amor
         </h1>
