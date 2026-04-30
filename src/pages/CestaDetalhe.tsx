@@ -19,7 +19,7 @@ const basketThemes = [
   },
   {
     id: "minimal",
-    name: "Minimalista",
+    name: "Cesta Três",
     colors: ["#e5e7eb", "#d1d5db"],
     icon: Palette,
   },
