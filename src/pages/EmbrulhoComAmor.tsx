@@ -7,40 +7,32 @@ import { cn } from "@/lib/utils";
 
 const giftThemes = [
   {
-    id: "romantic",
-    name: "Romântico",
-    colors: "from-rose-400 to-pink-500",
-    accent: "bg-rose-500",
-    icon: Heart,
+    id: "classic",
+    name: "Clássico",
+    colors: "from-gray-100 to-gray-200",
+    accent: "bg-gray-500",
+    icon: Gift,
   },
   {
-    id: "elegant",
-    name: "Elegante",
-    colors: "from-slate-800 to-slate-900",
-    accent: "bg-slate-600",
+    id: "modern",
+    name: "Moderno",
+    colors: "from-gray-800 to-gray-900",
+    accent: "bg-gray-600",
     icon: Sparkles,
-  },
-  {
-    id: "festive",
-    name: "Festivo",
-    colors: "from-amber-400 to-orange-500",
-    accent: "bg-amber-500",
-    icon: Star,
   },
   {
     id: "minimal",
     name: "Minimalista",
-    colors: "from-zinc-200 to-zinc-400",
-    accent: "bg-zinc-500",
+    colors: "from-gray-200 to-gray-300",
+    accent: "bg-gray-500",
     icon: Palette,
   },
 ];
 
 const ribbons = [
-  { id: "classic", name: "Clássico", color: "bg-rose-500" },
-  { id: "gold", name: "Dourado", color: "bg-amber-400" },
-  { id: "silver", name: "Prata", color: "bg-slate-300" },
-  { id: "velvet", name: "Veludo", color: "bg-purple-600" },
+  { id: "black", name: "Preto", color: "bg-gray-800" },
+  { id: "white", name: "Branco", color: "bg-gray-100" },
+  { id: "gray", name: "Cinza", color: "bg-gray-400" },
 ];
 
 const EmbrulhoComAmor = () => {
@@ -56,28 +48,28 @@ const EmbrulhoComAmor = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-pink-50 to-rose-100 py-12 px-4">
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 py-12 px-4">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div className="text-center mb-12 animate-fade-in">
           <div className="inline-flex items-center gap-3 bg-white/80 backdrop-blur-sm px-6 py-3 rounded-full shadow-lg mb-6">
-            <Gift className="w-8 h-8 text-rose-500" />
-            <h1 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-rose-500 to-pink-600 bg-clip-text text-transparent">
+            <Gift className="w-8 h-8 text-gray-500" />
+            <h1 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-gray-500 to-gray-600 bg-clip-text text-transparent">
               Embrulho Com Amor
             </h1>
-            <Heart className="w-8 h-8 text-pink-500 animate-pulse" />
+            <Heart className="w-8 h-8 text-gray-500 animate-pulse" />
           </div>
-          <p className="text-lg text-slate-600 max-w-2xl mx-auto">
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
             Transforme cada presente em uma lembrança inesquecível com nosso embrulho especial
           </p>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-8">
           {/* Gift Preview */}
-          <Card className="overflow-hidden border-2 border-dashed border-rose-200">
-            <CardHeader className="bg-gradient-to-r from-rose-50 to-pink-50">
+          <Card className="overflow-hidden border-2 border-dashed border-gray-200">
+            <CardHeader className="bg-gradient-to-r from-gray-50 to-gray-100">
               <CardTitle className="flex items-center gap-2">
-                <Package className="w-5 h-5 text-rose-500" />
+                <Package className="w-5 h-5 text-gray-500" />
                 Visualização do Presente
               </CardTitle>
               <CardDescription>Veja como ficará seu embrulho</CardDescription>
@@ -128,7 +120,7 @@ const EmbrulhoComAmor = () => {
                 {/* Message Tag */}
                 {hasMessage && (
                   <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 bg-white px-4 py-2 rounded-lg shadow-lg min-w-[200px]">
-                    <p className="text-sm text-slate-700 font-medium text-center italic">
+                    <p className="text-sm text-gray-700 font-medium text-center italic">
                       "{personalMessage}"
                     </p>
                   </div>
@@ -136,7 +128,7 @@ const EmbrulhoComAmor = () => {
               </div>
 
               {isWrapped && (
-                <div className="mt-8 flex items-center gap-2 text-rose-600 font-medium">
+                <div className="mt-8 flex items-center gap-2 text-gray-600 font-medium">
                   <CheckCircle className="w-5 h-5" />
                   <span>Presente embrulhado com sucesso! ✨</span>
                 </div>
@@ -150,7 +142,7 @@ const EmbrulhoComAmor = () => {
             <Card>
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
-                  <Palette className="w-5 h-5 text-rose-500" />
+                  <Palette className="w-5 h-5 text-gray-500" />
                   Tema do Embrulho
                 </CardTitle>
                 <CardDescription>Escolha o estilo que combina com a ocasião</CardDescription>
@@ -166,8 +158,8 @@ const EmbrulhoComAmor = () => {
                         className={cn(
                           "p-4 rounded-xl border-2 transition-all duration-300 flex flex-col items-center gap-2",
                           selectedTheme.id === theme.id
-                            ? "border-rose-500 bg-rose-50 shadow-md scale-105"
-                            : "border-slate-200 hover:border-rose-300 hover:bg-rose-50"
+                           ? "border-gray-500 bg-gray-100 shadow-md scale-105"
+                            : "border-gray-200 hover:border-gray-300 hover:bg-gray-50"
                         )}
                       >
                         <div className={cn(
@@ -188,7 +180,7 @@ const EmbrulhoComAmor = () => {
             <Card>
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
-                  <Sparkles className="w-5 h-5 text-amber-500" />
+                  <Sparkles className="w-5 h-5 text-gray-500" />
                   Laço e Detalhes
                 </CardTitle>
                 <CardDescription>Personalize os detalhes do seu embrulho</CardDescription>
@@ -202,8 +194,8 @@ const EmbrulhoComAmor = () => {
                       className={cn(
                         "p-3 rounded-lg border-2 transition-all duration-300 flex items-center gap-2",
                         selectedRibbon.id === ribbon.id
-                          ? "border-rose-500 bg-rose-50 shadow-md"
-                          : "border-slate-200 hover:border-rose-300"
+                         ? "border-gray-500 bg-gray-100 shadow-md"
+                          : "border-gray-200 hover:border-gray-300"
                       )}
                     >
                       <div className={cn("w-8 h-3 rounded-full", ribbon.color)} />
@@ -213,21 +205,21 @@ const EmbrulhoComAmor = () => {
                 </div>
 
                 {/* Message Toggle */}
-                <div className="flex items-center justify-between p-3 bg-slate-50 rounded-lg">
+                <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
                   <div className="flex items-center gap-2">
-                    <Star className="w-4 h-4 text-amber-500" />
+                    <Star className="w-4 h-4 text-gray-500" />
                     <span className="text-sm font-medium">Incluir mensagem</span>
                   </div>
                   <button
                     onClick={() => setHasMessage(!hasMessage)}
                     className={cn(
                       "w-12 h-6 rounded-full transition-colors",
-                      hasMessage ? "bg-rose-500" : "bg-slate-300"
+                      hasMessage? "bg-gray-500" : "bg-gray-300"
                     )}
                   >
                     <div className={cn(
                       "w-5 h-5 rounded-full bg-white shadow-md transition-transform",
-                      hasMessage ? "translate-x-7" : "translate-x-1"
+                      hasMessage? "translate-x-7" : "translate-x-1"
                     )} />
                   </button>
                 </div>
@@ -239,7 +231,7 @@ const EmbrulhoComAmor = () => {
               <Card>
                 <CardHeader>
                   <CardTitle className="flex items-center gap-2">
-                    <Heart className="w-5 h-5 text-pink-500" />
+                    <Heart className="w-5 h-5 text-gray-500" />
                     Mensagem Pessoal
                   </CardTitle>
                 </CardHeader>
@@ -248,7 +240,7 @@ const EmbrulhoComAmor = () => {
                     value={personalMessage}
                     onChange={(e) => setPersonalMessage(e.target.value)}
                     placeholder="Escreva uma mensagem especial..."
-                    className="w-full px-4 py-3 rounded-lg border-2 border-slate-200 focus:border-rose-500 focus:outline-none resize-none text-slate-700"
+                    className="w-full px-4 py-3 rounded-lg border-2 border-gray-200 focus:border-gray-500 focus:outline-none resize-none text-gray-700"
                     rows={3}
                   />
                 </CardContent>
@@ -258,7 +250,7 @@ const EmbrulhoComAmor = () => {
             {/* Action Button */}
             <Button
               onClick={handleWrapGift}
-              className="w-full py-6 text-lg font-bold bg-gradient-to-r from-rose-500 to-pink-600 hover:from-rose-600 hover:to-pink-700 transition-all duration-300 shadow-lg hover:shadow-xl"
+              className="w-full py-6 text-lg font-bold bg-gradient-to-r from-gray-500 to-gray-600 hover:from-gray-600 hover:to-gray-700 transition-all duration-300 shadow-lg hover:shadow-xl"
             >
               <ShoppingBag className="w-5 h-5 mr-2" />
               Embrulhar Presente com Amor
@@ -270,31 +262,31 @@ const EmbrulhoComAmor = () => {
         <div className="mt-16 grid md:grid-cols-3 gap-6">
           <Card className="text-center border-0 shadow-lg hover:shadow-xl transition-shadow">
             <CardContent className="pt-6">
-              <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-br from-rose-400 to-pink-500 flex items-center justify-center">
+              <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-br from-gray-400 to-gray-500 flex items-center justify-center">
                 <Gift className="w-8 h-8 text-white" />
               </div>
               <h3 className="font-bold text-lg mb-2">Embrulho Premium</h3>
-              <p className="text-slate-600 text-sm">Materiais de alta qualidade para um acabamento perfeito</p>
+              <p className="text-gray-600 text-sm">Materiais de alta qualidade para um acabamento perfeito</p>
             </CardContent>
           </Card>
 
           <Card className="text-center border-0 shadow-lg hover:shadow-xl transition-shadow">
             <CardContent className="pt-6">
-              <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-br from-amber-400 to-orange-500 flex items-center justify-center">
+              <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-br from-gray-400 to-gray-500 flex items-center justify-center">
                 <Heart className="w-8 h-8 text-white" />
               </div>
               <h3 className="font-bold text-lg mb-2">Feito com Carinho</h3>
-              <p className="text-slate-600 text-sm">Cada detalhe pensado para transmitir seus sentimentos</p>
+              <p className="text-gray-600 text-sm">Cada detalhe pensado para transmitir seus sentimentos</p>
             </CardContent>
           </Card>
 
           <Card className="text-center border-0 shadow-lg hover:shadow-xl transition-shadow">
             <CardContent className="pt-6">
-              <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-br from-purple-400 to-pink-500 flex items-center justify-center">
+              <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-br from-gray-400 to-gray-500 flex items-center justify-center">
                 <Sparkles className="w-8 h-8 text-white" />
               </div>
               <h3 className="font-bold text-lg mb-2">Personalizado</h3>
-              <p className="text-slate-600 text-sm">Opções infinitas para criar o embrulho dos sonhos</p>
+              <p className="text-gray-600 text-sm">Opções infinitas para criar o embrulho dos sonhos</p>
             </CardContent>
           </Card>
         </div>
