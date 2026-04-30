@@ -1,43 +1,32 @@
 import { useState } from "react";
-import { Gift, Heart, Sparkles, Package, ShoppingBag, Star, Palette, CheckCircle } from "lucide-react";
+import { Gift, Heart, Sparkles, Package, ShoppingBag, CheckCircle, Palette } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
 import { cn } from "@/lib/utils";
 
 const basketThemes = [
   {
     id: "classic",
     name: "Clássica",
-    colors: "from-amber-100 to-amber-200",
-    accent: "bg-amber-500",
+    colors: ["#fef3c7", "#fde68a"],
     icon: Gift,
   },
   {
     id: "modern",
     name: "Moderna",
-    colors: "from-slate-800 to-slate-900",
-    accent: "bg-slate-600",
+    colors: ["#1e293b", "#0f172a"],
     icon: Sparkles,
   },
   {
     id: "minimal",
     name: "Minimalista",
-    colors: "from-gray-200 to-gray-300",
-    accent: "bg-gray-500",
+    colors: ["#e5e7eb", "#d1d5db"],
     icon: Palette,
   },
 ];
 
-const ribbons = [
-  { id: "black", name: "Preto", color: "bg-gray-800" },
-  { id: "white", name: "Branco", color: "bg-gray-100" },
-  { id: "gray", name: "Cinza", color: "bg-gray-400" },
-];
-
 const CestasPersonalizadas = () => {
   const [selectedTheme, setSelectedTheme] = useState(basketThemes[0]);
-  const [selectedRibbon, setSelectedRibbon] = useState(ribbons[0]);
   const [hasMessage, setHasMessage] = useState(true);
   const [isWrapped, setIsWrapped] = useState(false);
   const [personalMessage, setPersonalMessage] = useState("Com todo o meu carinho...");
@@ -83,12 +72,9 @@ const CestasPersonalizadas = () => {
               >
                 {/* Basket */}
                 <div
-                  className={cn(
-                    "absolute inset-0 rounded-xl shadow-lg flex items-center justify-center",
-                    selectedTheme.accent,
-                  )}
+                  className="absolute inset-0 rounded-xl shadow-lg flex items-center justify-center"
                   style={{
-                    background: `linear-gradient(135deg, ${selectedTheme.colors})`,
+                    background: `linear-gradient(135deg, ${selectedTheme.colors[0]}, ${selectedTheme.colors[1]})`,
                   }}
                 >
                   <div className="text-white text-center p-4">
@@ -98,26 +84,11 @@ const CestasPersonalizadas = () => {
                 </div>
 
                 {/* Ribbon */}
-                <div
-                  className={cn(
-                    "absolute -top-2 left-1/2 -translate-x-1/2 w-20 h-8 rounded-full shadow-md",
-                    selectedRibbon.color,
-                  )}
-                />
-                <div
-                  className={cn(
-                    "absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 w-8 h-20 rounded-full shadow-md",
-                    selectedRibbon.color,
-                  )}
-                />
+                <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-20 h-8 rounded-full shadow-md bg-gray-800" />
+                <div className="absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 w-8 h-20 rounded-full shadow-md bg-gray-800" />
 
                 {/* Bow */}
-                <div
-                  className={cn(
-                    "absolute -top-4 left-1/2 -translate-x-1/2 w-12 h-12 rounded-full shadow-lg flex items-center justify-center",
-                    selectedRibbon.color,
-                  )}
-                >
+                <div className="absolute -top-4 left-1/2 -translate-x-1/2 w-12 h-12 rounded-full shadow-lg flex items-center justify-center bg-gray-800">
                   <Heart className="w-6 h-6 text-white" />
                 </div>
 
@@ -142,6 +113,46 @@ const CestasPersonalizadas = () => {
 
           {/* Customization Panel */}
           <div className="space-y-6">
+            {/* Catalog Selection */}
+            <Card>
+              <CardHeader>
+                <CardTitle className="flex items-center gap-2">
+                  <Package className="w-5 h-5 text-gray-500" />
+                  Catálogo de Cestas
+                </CardTitle>
+                <CardDescription>Selecione uma cesta do catálogo para visualizar</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="grid grid-cols-3 gap-4">
+                  {basketThemes.map((theme) => (
+                    <button
+                      key={theme.id}
+                      onClick={() => setSelectedTheme(theme)}
+                      className={cn(
+                        "p-4 rounded-xl border-2 transition-all hover:shadow-md flex flex-col items-center gap-2",
+                        selectedTheme.id === theme.id
+                          ? "border-gray-500 bg-gray-50"
+                          : "border-gray-200 hover:border-gray-300"
+                      )}
+                    >
+                      <div
+                        className="w-12 h-12 rounded-lg flex items-center justify-center"
+                        style={{
+                          background: `linear-gradient(135deg, ${theme.colors[0]}, ${theme.colors[1]})`,
+                        }}
+                      >
+                        <theme.icon className="w-6 h-6 text-white" />
+                      </div>
+                      <span className="text-sm font-medium text-gray-700">{theme.name}</span>
+                      {selectedTheme.id === theme.id && (
+                        <CheckCircle className="w-4 h-4 text-gray-500" />
+                      )}
+                    </button>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
+
             {/* Personal Message */}
             <Card>
               <CardHeader>
