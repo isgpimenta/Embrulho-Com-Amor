@@ -8,7 +8,7 @@ const basketThemes = [
   {
     id: "classic",
     name: "Cesta Um",
-    price: "R$ 199,90",
+    price: "R$220,00",
     colors: ["#fef3c7", "#fde68a"],
     icon: Gift,
     image: "/cesta 1.jpeg",
@@ -16,7 +16,7 @@ const basketThemes = [
   {
     id: "modern",
     name: "Cesta Dois",
-    price: "R$ 299,90",
+    price: "R$120,00",
     colors: ["#1e293b", "#0f172a"],
     icon: Sparkles,
     image: "/cesta 2.jpeg",
@@ -24,7 +24,7 @@ const basketThemes = [
   {
     id: "minimal",
     name: "Cesta Três",
-    price: "R$ 149,90",
+    price: "R$270,00",
     colors: ["#e5e7eb", "#d1d5db"],
     icon: Palette,
     image: "/cesta 3.jpeg",
@@ -80,7 +80,7 @@ export const CestaDetalhe = () => {
               <img
                 src={theme.image}
                 alt={theme.name}
-                className="w-full max-w-md max-h-96 rounded-xl object-contain shadow-2xl transition-all duration-700 transform hover:scale-105"
+                className="w-full max-w-md rounded-xl object-contain shadow-2xl transition-all duration-700 transform hover:scale-105"
               />
             ) : (
               <div
