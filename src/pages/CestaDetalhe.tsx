@@ -70,7 +70,7 @@ export const CestaDetalhe = () => {
         <Card className="overflow-hidden border-2 border-dashed border-gray-200">
           <CardHeader className="bg-gradient-to-r from-gray-50 to-gray-100">
             <CardTitle className="flex flex-col items-center gap-2">
-              <Icon className="w-5 h-5 text-gray-500" />
+              <Icon className="w-5 h-5 text-rose-500" />
               <span>{theme.name}</span>
               <span className="text-sm text-gray-600">{theme.price}</span>
             </CardTitle>
@@ -97,6 +97,31 @@ export const CestaDetalhe = () => {
                 </p>
               </div>
             )}
+
+            {/* Seção de Itens da Cesta */}
+            <div className="mt-10 w-full max-w-md px-4">
+              <h3 className="text-2xl font-bold text-gray-800 mb-6 text-center">
+                Itens da Cesta
+              </h3>
+              <ul className="space-y-4 text-gray-600">
+                <li className="flex items-center gap-3">
+                  <span className="w-2.5 h-2.5 bg-rose-500 rounded-full flex-shrink-0"></span>
+                  <span className="text-lg">01 vela aromática</span>
+                </li>
+                <li className="flex items-center gap-3">
+                  <span className="w-2.5 h-2.5 bg-rose-500 rounded-full flex-shrink-0"></span>
+                  <span className="text-lg">01 foto polaróide</span>
+                </li>
+                <li className="flex items-center gap-3">
+                  <span className="w-2.5 h-2.5 bg-rose-500 rounded-full flex-shrink-0"></span>
+                  <span className="text-lg">01 pelúcia</span>
+                </li>
+                <li className="flex items-center gap-3">
+                  <span className="w-2.5 h-2.5 bg-rose-500 rounded-full flex-shrink-0"></span>
+                  <span className="text-lg">03 balões metalizados</span>
+                </li>
+              </ul>
+            </div>
           </CardContent>
         </Card>
       </div>
