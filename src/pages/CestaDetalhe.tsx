@@ -19,6 +19,7 @@ const basketThemes = [
     price: "R$ 299,90",
     colors: ["#1e293b", "#0f172a"],
     icon: Sparkles,
+    image: "/cesta 2.jpeg", // <-- added image for Cesta Dois
   },
   {
     id: "minimal",
@@ -26,6 +27,7 @@ const basketThemes = [
     price: "R$ 149,90",
     colors: ["#e5e7eb", "#d1d5db"],
     icon: Palette,
+    // no image for this theme
   },
 ];
 
@@ -75,9 +77,9 @@ export const CestaDetalhe = () => {
           </CardHeader>
           <CardContent className="flex flex-col items-center py-16">
             {theme.image ? (
-              <img 
-                src={theme.image} 
-                alt={theme.name} 
+              <img
+                src={theme.image}
+                alt={theme.name}
                 className="w-full max-w-lg h-80 md:h-96 rounded-xl object-cover shadow-2xl transition-all duration-700 transform hover:scale-105"
               />
             ) : (

@@ -19,6 +19,7 @@ const basketThemes = [
     price: "R$ 299,90",
     colors: ["#1e293b", "#0f172a"],
     icon: Sparkles,
+    image: "/cesta 2.jpeg", // <-- added image for Cesta Dois
   },
   {
     id: "minimal",
@@ -26,6 +27,7 @@ const basketThemes = [
     price: "R$ 149,90",
     colors: ["#e5e7eb", "#d1d5db"],
     icon: Palette,
+    // no image for this theme
   },
 ];
 
@@ -63,9 +65,9 @@ const CestasPersonalizadas = () => {
                   )}
                 >
                   {theme.image ? (
-                    <img 
-                      src={theme.image} 
-                      alt={theme.name} 
+                    <img
+                      src={theme.image}
+                      alt={theme.name}
                       className="w-20 h-20 rounded-lg object-cover flex-shrink-0"
                     />
                   ) : (
