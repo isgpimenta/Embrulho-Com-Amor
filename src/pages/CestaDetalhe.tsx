@@ -40,10 +40,11 @@ const basketThemes = [
     icon: Palette,
     image: "/cesta 3.jpeg",
     items: [
-      "01 vela aromática",
-      "01 foto polaróide",
       "01 pelúcia",
-      "03 balões metalizados",
+      "01 caixa de Ferrero Rocher",
+      "01 suco",
+      "01 pacote com uvas",
+      "01 pacote de pãezinhos",
     ],
   },
 ];
