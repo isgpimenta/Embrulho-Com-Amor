@@ -5,19 +5,19 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge";
 import { cn } from "@/lib/utils";
 
-const giftThemes = [
+const basketThemes = [
   {
     id: "classic",
-    name: "Clássico",
-    colors: "from-gray-100 to-gray-200",
-    accent: "bg-gray-500",
+    name: "Clássica",
+    colors: "from-amber-100 to-amber-200",
+    accent: "bg-amber-500",
     icon: Gift,
   },
   {
     id: "modern",
-    name: "Moderno",
-    colors: "from-gray-800 to-gray-900",
-    accent: "bg-gray-600",
+    name: "Moderna",
+    colors: "from-slate-800 to-slate-900",
+    accent: "bg-slate-600",
     icon: Sparkles,
   },
   {
@@ -35,8 +35,8 @@ const ribbons = [
   { id: "gray", name: "Cinza", color: "bg-gray-400" },
 ];
 
-const EmbrulhoComAmor = () => {
-  const [selectedTheme, setSelectedTheme] = useState(giftThemes[0]);
+const CestasPersonalizadas = () => {
+  const [selectedTheme, setSelectedTheme] = useState(basketThemes[0]);
   const [selectedRibbon, setSelectedRibbon] = useState(ribbons[0]);
   const [hasMessage, setHasMessage] = useState(true);
   const [isWrapped, setIsWrapped] = useState(false);
@@ -55,24 +55,24 @@ const EmbrulhoComAmor = () => {
           <div className="inline-flex items-center gap-3 bg-white/80 backdrop-blur-sm px-6 py-3 rounded-full shadow-lg mb-6">
             <Gift className="w-8 h-8 text-gray-500" />
             <h1 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-gray-500 to-gray-600 bg-clip-text text-transparent">
-              Embrulho Com Amor
+              Cestas Personalizadas
             </h1>
             <Heart className="w-8 h-8 text-gray-500 animate-pulse" />
           </div>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Transforme cada presente em uma lembrança inesquecível com nosso embrulho especial
+            Crie cestas especiais com itens que combinam com cada ocasião
           </p>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-8">
-          {/* Gift Preview */}
+          {/* Basket Preview */}
           <Card className="overflow-hidden border-2 border-dashed border-gray-200">
             <CardHeader className="bg-gradient-to-r from-gray-50 to-gray-100">
               <CardTitle className="flex items-center gap-2">
                 <Package className="w-5 h-5 text-gray-500" />
-                Visualização do Presente
+                Visualização da Cesta
               </CardTitle>
-              <CardDescription>Veja como ficará seu embrulho</CardDescription>
+              <CardDescription>Veja como ficará sua cesta</CardDescription>
             </CardHeader>
             <CardContent className="flex flex-col items-center justify-center py-12">
               <div 
@@ -81,7 +81,7 @@ const EmbrulhoComAmor = () => {
                   isWrapped && "animate-bounce"
                 )}
               >
-                {/* Gift Box */}
+                {/* Basket */}
                 <div className={cn(
                   "absolute inset-0 rounded-xl shadow-lg flex items-center justify-center",
                   selectedTheme.accent
@@ -92,20 +92,18 @@ const EmbrulhoComAmor = () => {
                 >
                   <div className="text-white text-center p-4">
                     <Package className="w-16 h-16 mx-auto mb-4 opacity-90" />
-                    <p className="font-semibold text-lg">Presente Especial</p>
+                    <p className="font-semibold text-lg">Cesta Especial</p>
                   </div>
                 </div>
 
                 {/* Ribbon */}
                 <div className={cn(
                   "absolute -top-2 left-1/2 -translate-x-1/2 w-20 h-8 rounded-full shadow-md",
-                  selectedRibbon.color
-                )}
+                  selectedRibbon.color                )}
                 />
                 <div className={cn(
                   "absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 w-8 h-20 rounded-full shadow-md",
-                  selectedRibbon.color
-                )}
+                  selectedRibbon.color                )}
                 />
 
                 {/* Bow */}
@@ -130,7 +128,7 @@ const EmbrulhoComAmor = () => {
               {isWrapped && (
                 <div className="mt-8 flex items-center gap-2 text-gray-600 font-medium">
                   <CheckCircle className="w-5 h-5" />
-                  <span>Presente embrulhado com sucesso! ✨</span>
+                  <span>Cesta montada com sucesso! ✨</span>
                 </div>
               )}
             </CardContent>
@@ -143,13 +141,13 @@ const EmbrulhoComAmor = () => {
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
                   <Palette className="w-5 h-5 text-gray-500" />
-                  Tema do Embrulho
+                  Tema da Cesta
                 </CardTitle>
                 <CardDescription>Escolha o estilo que combina com a ocasião</CardDescription>
               </CardHeader>
               <CardContent>
                 <div className="grid grid-cols-2 gap-3">
-                  {giftThemes.map((theme) => {
+                  {basketThemes.map((theme) => {
                     const Icon = theme.icon;
                     return (
                       <button
@@ -180,10 +178,10 @@ const EmbrulhoComAmor = () => {
             <Card>
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
-                  <Sparkles className="w-5 h-5 text-gray-500" />
+                  <Sparkles className="w-5 h-5 text-amber-500" />
                   Laço e Detalhes
                 </CardTitle>
-                <CardDescription>Personalize os detalhes do seu embrulho</CardDescription>
+                <CardDescription>Personalize os detalhes da sua cesta</CardDescription>
               </CardHeader>
               <CardContent>
                 <div className="grid grid-cols-2 gap-3 mb-4">
@@ -207,7 +205,7 @@ const EmbrulhoComAmor = () => {
                 {/* Message Toggle */}
                 <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
                   <div className="flex items-center gap-2">
-                    <Star className="w-4 h-4 text-gray-500" />
+                    <Star className="w-4 h-4 text-amber-500" />
                     <span className="text-sm font-medium">Incluir mensagem</span>
                   </div>
                   <button
@@ -253,7 +251,7 @@ const EmbrulhoComAmor = () => {
               className="w-full py-6 text-lg font-bold bg-gradient-to-r from-gray-500 to-gray-600 hover:from-gray-600 hover:to-gray-700 transition-all duration-300 shadow-lg hover:shadow-xl"
             >
               <ShoppingBag className="w-5 h-5 mr-2" />
-              Embrulhar Presente com Amor
+              Montar Minha Cesta
             </Button>
           </div>
         </div>
@@ -265,8 +263,8 @@ const EmbrulhoComAmor = () => {
               <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-br from-gray-400 to-gray-500 flex items-center justify-center">
                 <Gift className="w-8 h-8 text-white" />
               </div>
-              <h3 className="font-bold text-lg mb-2">Embrulho Premium</h3>
-              <p className="text-gray-600 text-sm">Materiais de alta qualidade para um acabamento perfeito</p>
+              <h3 className="font-bold text-lg mb-2">Cesta Premium</h3>
+              <p className="text-gray-600 text-sm">Materiais de alta qualidade para uma cesta incrível</p>
             </CardContent>
           </Card>
 
@@ -275,8 +273,8 @@ const EmbrulhoComAmor = () => {
               <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-br from-gray-400 to-gray-500 flex items-center justify-center">
                 <Heart className="w-8 h-8 text-white" />
               </div>
-              <h3 className="font-bold text-lg mb-2">Feito com Carinho</h3>
-              <p className="text-gray-600 text-sm">Cada detalhe pensado para transmitir seus sentimentos</p>
+              <h3 className="font-bold text-lg mb-2">Feita com Carinho</h3>
+              <p className="text-gray-600 text-sm">Cada detalhe pensado para você</p>
             </CardContent>
           </Card>
 
@@ -286,7 +284,7 @@ const EmbrulhoComAmor = () => {
                 <Sparkles className="w-8 h-8 text-white" />
               </div>
               <h3 className="font-bold text-lg mb-2">Personalizado</h3>
-              <p className="text-gray-600 text-sm">Opções infinitas para criar o embrulho dos sonhos</p>
+              <p className="text-gray-600 text-sm">Opções infinitas para criar a cesta dos sonhos</p>
             </CardContent>
           </Card>
         </div>
@@ -295,4 +293,4 @@ const EmbrulhoComAmor = () => {
   );
 };
 
-export default EmbrulhoComAmor;
+export default CestasPersonalizadas;
