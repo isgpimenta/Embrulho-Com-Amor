@@ -2,21 +2,24 @@ import { useState } from "react";
 import { Gift, Sparkles, Palette, CheckCircle } from "lucide-react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
+import { useNavigate } from "react-router-dom";
 
 const basketThemes = [
   {
     id: "classic",
-    // name removed – we’ll show a number instead
+    name: "Clássica",
     colors: ["#fef3c7", "#fde68a"],
     icon: Gift,
   },
   {
     id: "modern",
+    name: "Moderna",
     colors: ["#1e293b", "#0f172a"],
     icon: Sparkles,
   },
   {
     id: "minimal",
+    name: "Minimalista",
     colors: ["#e5e7eb", "#d1d5db"],
     icon: Palette,
   },
@@ -24,11 +27,17 @@ const basketThemes = [
 
 const CestasPersonalizadas = () => {
   const [selectedTheme, setSelectedTheme] = useState(basketThemes[0]);
+  const navigate = useNavigate();
+
+  const handleSelect = (theme: typeof basketThemes[0]) => {
+    setSelectedTheme(theme);
+    navigate(`/cesta/${theme.id}`);
+  };
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 py-12 px-4">
       <div className="max-w-6xl mx-auto">
-        {/* Catálogo de Cestas – now shows numbers */}
+        {/* Only Catálogo de Cestas topic remains */}
         <Card>
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
@@ -42,7 +51,7 @@ const CestasPersonalizadas = () => {
               {basketThemes.map((theme, index) => (
                 <button
                   key={theme.id}
-                  onClick={() => setSelectedTheme(theme)}
+                  onClick={() => handleSelect(theme)}
                   className={cn(
                     "p-4 rounded-xl border-2 transition-all hover:shadow-md flex flex-col items-center gap-2",
                     selectedTheme.id === theme.id
