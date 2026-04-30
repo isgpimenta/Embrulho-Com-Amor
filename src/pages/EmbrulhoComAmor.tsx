@@ -47,7 +47,7 @@ const CestasPersonalizadas = () => {
           </CardHeader>
           <CardContent>
             <div className="grid grid-cols-3 gap-4">
-              {basketThemes.map((theme, index) => (
+              {basketThemes.map((theme) => (
                 <button
                   key={theme.id}
                   onClick={() => handleSelect(theme)}
@@ -66,8 +66,9 @@ const CestasPersonalizadas = () => {
                   >
                     <theme.icon className="w-6 h-6 text-white" />
                   </div>
+                  {/* Show the basket name instead of a number */}
                   <span className="text-lg font-bold text-gray-800">
-                    {index + 1}
+                    {theme.name}
                   </span>
                   {selectedTheme.id === theme.id && (
                     <CheckCircle className="w-4 h-4 text-gray-500" />
