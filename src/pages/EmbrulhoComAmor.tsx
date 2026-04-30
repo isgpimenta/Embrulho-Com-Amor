@@ -13,7 +13,7 @@ const basketThemes = [
   },
   {
     id: "modern",
-    name: "Moderna",
+    name: "Cesta Dois",
     colors: ["#1e293b", "#0f172a"],
     icon: Sparkles,
   },
@@ -37,7 +37,6 @@ const CestasPersonalizadas = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 py-12 px-4">
       <div className="max-w-6xl mx-auto">
-        {/* Only Catálogo de Cestas topic remains */}
         <Card>
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
@@ -67,7 +66,6 @@ const CestasPersonalizadas = () => {
                   >
                     <theme.icon className="w-6 h-6 text-white" />
                   </div>
-                  {/* Show the basket number */}
                   <span className="text-lg font-bold text-gray-800">
                     {index + 1}
                   </span>

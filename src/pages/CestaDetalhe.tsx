@@ -13,7 +13,7 @@ const basketThemes = [
   },
   {
     id: "modern",
-    name: "Moderna",
+    name: "Cesta Dois",
     colors: ["#1e293b", "#0f172a"],
     icon: Sparkles,
   },
