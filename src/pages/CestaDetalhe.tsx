@@ -11,6 +11,7 @@ const basketThemes = [
     price: "R$ 199,90",
     colors: ["#fef3c7", "#fde68a"],
     icon: Gift,
+    image: "/cesta 1.jpeg",
   },
   {
     id: "modern",
@@ -73,19 +74,27 @@ export const CestaDetalhe = () => {
             </CardTitle>
           </CardHeader>
           <CardContent className="flex flex-col items-center py-12">
-            <div
-              className={cn(
-                "relative w-64 h-64 rounded-xl shadow-2xl transition-all duration-700 transform hover:scale-105",
-              )}
-              style={{
-                background: `linear-gradient(135deg, ${theme.colors[0]}, ${theme.colors[1]})`,
-              }}
-            >
-              <Icon className="w-16 h-16 text-white mx-auto mt-12" />
-              <p className="mt-4 text-center text-white font-semibold">
-                {theme.name}
-              </p>
-            </div>
+            {theme.image ? (
+              <img 
+                src={theme.image} 
+                alt={theme.name} 
+                className="w-64 h-64 rounded-xl object-cover shadow-2xl transition-all duration-700 transform hover:scale-105"
+              />
+            ) : (
+              <div
+                className={cn(
+                  "relative w-64 h-64 rounded-xl shadow-2xl transition-all duration-700 transform hover:scale-105",
+                )}
+                style={{
+                  background: `linear-gradient(135deg, ${theme.colors[0]}, ${theme.colors[1]})`,
+                }}
+              >
+                <Icon className="w-16 h-16 text-white mx-auto mt-12" />
+                <p className="mt-4 text-center text-white font-semibold">
+                  {theme.name}
+                </p>
+              </div>
+            )}
           </CardContent>
         </Card>
       </div>

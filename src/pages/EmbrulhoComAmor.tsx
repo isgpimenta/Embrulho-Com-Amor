@@ -11,6 +11,7 @@ const basketThemes = [
     price: "R$ 199,90",
     colors: ["#fef3c7", "#fde68a"],
     icon: Gift,
+    image: "/cesta 1.jpeg",
   },
   {
     id: "modern",
@@ -61,19 +62,25 @@ const CestasPersonalizadas = () => {
                       : "border-gray-200 hover:border-gray-300",
                   )}
                 >
-                  <div
-                    className="w-12 h-12 rounded-lg flex items-center justify-center"
-                    style={{
-                      background: `linear-gradient(135deg, ${theme.colors[0]}, ${theme.colors[1]})`,
-                    }}
-                  >
-                    <theme.icon className="w-6 h-6 text-white" />
-                  </div>
-                  {/* Basket name */}
+                  {theme.image ? (
+                    <img 
+                      src={theme.image} 
+                      alt={theme.name} 
+                      className="w-12 h-12 rounded-lg object-cover"
+                    />
+                  ) : (
+                    <div
+                      className="w-12 h-12 rounded-lg flex items-center justify-center"
+                      style={{
+                        background: `linear-gradient(135deg, ${theme.colors[0]}, ${theme.colors[1]})`,
+                      }}
+                    >
+                      <theme.icon className="w-6 h-6 text-white" />
+                    </div>
+                  )}
                   <span className="text-lg font-bold text-gray-800">
                     {theme.name}
                   </span>
-                  {/* Price below the name */}
                   <span className="text-sm text-gray-600">{theme.price}</span>
                   {selectedTheme.id === theme.id && (
                     <CheckCircle className="w-4 h-4 text-gray-500" />
