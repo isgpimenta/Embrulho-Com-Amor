@@ -54,12 +54,12 @@ const CestasPersonalizadas = () => {
         </div>
 
         <div className="grid lg:grid-cols-2 gap-8">
-          {/* Basket Preview */}
+          {/* Basket Preview (now without a separate catalog title) */}
           <Card className="overflow-hidden border-2 border-dashed border-gray-200">
             <CardHeader className="bg-gradient-to-r from-gray-50 to-gray-100">
               <CardTitle className="flex items-center gap-2">
                 <Package className="w-5 h-5 text-gray-500" />
-                Catálogo
+                Visualização
               </CardTitle>
               <CardDescription>Veja como ficará sua cesta no catálogo</CardDescription>
             </CardHeader>
@@ -111,7 +111,7 @@ const CestasPersonalizadas = () => {
             </CardContent>
           </Card>
 
-          {/* Customization Panel */}
+          {/* Customization Panel (keeps the 'Catálogo de Cestas' section) */}
           <div className="space-y-6">
             {/* Catalog Selection */}
             <Card>
