@@ -7,7 +7,7 @@ import { cn } from "@/lib/utils";
 const basketThemes = [
   {
     id: "classic",
-    name: "Clássica",
+    name: "Cesta Um",
     colors: ["#fef3c7", "#fde68a"],
     icon: Gift,
   },
@@ -79,7 +79,7 @@ export const CestaDetalhe = () => {
             >
               <Icon className="w-16 h-16 text-white mx-auto mt-12" />
               <p className="mt-4 text-center text-white font-semibold">
-                Cesta {theme.name}
+                {theme.name}
               </p>
             </div>
           </CardContent>

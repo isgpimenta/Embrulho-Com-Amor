@@ -7,7 +7,7 @@ import { useNavigate } from "react-router-dom";
 const basketThemes = [
   {
     id: "classic",
-    name: "Clássica",
+    name: "Cesta Um",
     colors: ["#fef3c7", "#fde68a"],
     icon: Gift,
   },
