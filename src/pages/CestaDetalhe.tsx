@@ -130,19 +130,17 @@ export const CestaDetalhe = () => {
                 ))}
               </ul>
 
-              {/* Botão de Comprar exclusivo para Cesta Um */}
-              {theme.id === "classic" && (
-                <div className="mt-8 flex justify-center">
-                  <Button
-                    size="lg"
-                    className="bg-rose-500 hover:bg-rose-600 text-white rounded-full px-8 py-6 text-lg group"
-                    onClick={() => navigate("/pagamento")}
-                  >
-                    Comprar
-                    <ShoppingCart className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
-                  </Button>
-                </div>
-              )}
+              {/* Botão de Comprar para todas as cestas */}
+              <div className="mt-8 flex justify-center">
+                <Button
+                  size="lg"
+                  className="bg-rose-500 hover:bg-rose-600 text-white rounded-full px-8 py-6 text-lg group"
+                  onClick={() => navigate("/pagamento")}
+                >
+                  Comprar
+                  <ShoppingCart className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+                </Button>
+              </div>
             </div>
           </CardContent>
         </Card>
