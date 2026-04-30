@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { CreditCard, Banknote, Wallet } from "lucide-react";
+import { CreditCard, Wallet } from "lucide-react";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft } from "lucide-react";
@@ -21,14 +21,6 @@ const Pagamento = () => {
           >
             <CreditCard className="w-5 h-5" />
             Cartão de Crédito/Débito
-          </Button>
-          <Button
-            variant="outline"
-            className="w-full flex items-center justify-center gap-2"
-            onClick={() => alert("Pagamento com boleto ainda não implementado")}
-          >
-            <Banknote className="w-5 h-5" />
-            Boleto Bancário
           </Button>
           <Button
             variant="outline"
