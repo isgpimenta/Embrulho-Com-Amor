@@ -8,7 +8,7 @@ const basketThemes = [
   {
     id: "classic",
     name: "Cesta Um",
-    price: "R$ 199,90",
+    price: "R$ 220,00",
     colors: ["#fef3c7", "#fde68a"],
     icon: Gift,
     image: "/cesta 1.jpeg",
