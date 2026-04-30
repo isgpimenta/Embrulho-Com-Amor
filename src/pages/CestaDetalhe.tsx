@@ -12,6 +12,12 @@ const basketThemes = [
     colors: ["#fef3c7", "#fde68a"],
     icon: Gift,
     image: "/cesta 1.jpeg",
+    items: [
+      "01 vela aromática",
+      "01 foto polaróide",
+      "01 pelúcia",
+      "03 balões metalizados",
+    ],
   },
   {
     id: "modern",
@@ -20,6 +26,11 @@ const basketThemes = [
     colors: ["#1e293b", "#0f172a"],
     icon: Sparkles,
     image: "/cesta 2.jpeg",
+    items: [
+      "01 porta‑jóias",
+      "01 caixa de Ferrero Rocher",
+      "01 flor calandiva média",
+    ],
   },
   {
     id: "minimal",
@@ -28,6 +39,12 @@ const basketThemes = [
     colors: ["#e5e7eb", "#d1d5db"],
     icon: Palette,
     image: "/cesta 3.jpeg",
+    items: [
+      "01 vela aromática",
+      "01 foto polaróide",
+      "01 pelúcia",
+      "03 balões metalizados",
+    ],
   },
 ];
 
@@ -104,22 +121,12 @@ export const CestaDetalhe = () => {
                 Itens da Cesta
               </h3>
               <ul className="space-y-4 text-gray-600">
-                <li className="flex items-center gap-3">
-                  <span className="w-2.5 h-2.5 bg-rose-500 rounded-full flex-shrink-0"></span>
-                  <span className="text-lg">01 vela aromática</span>
-                </li>
-                <li className="flex items-center gap-3">
-                  <span className="w-2.5 h-2.5 bg-rose-500 rounded-full flex-shrink-0"></span>
-                  <span className="text-lg">01 foto polaróide</span>
-                </li>
-                <li className="flex items-center gap-3">
-                  <span className="w-2.5 h-2.5 bg-rose-500 rounded-full flex-shrink-0"></span>
-                  <span className="text-lg">01 pelúcia</span>
-                </li>
-                <li className="flex items-center gap-3">
-                  <span className="w-2.5 h-2.5 bg-rose-500 rounded-full flex-shrink-0"></span>
-                  <span className="text-lg">03 balões metalizados</span>
-                </li>
+                {theme.items.map((item, idx) => (
+                  <li key={idx} className="flex items-center gap-3">
+                    <span className="w-2.5 h-2.5 bg-rose-500 rounded-full flex-shrink-0"></span>
+                    <span className="text-lg">{item}</span>
+                  </li>
+                ))}
               </ul>
             </div>
           </CardContent>
