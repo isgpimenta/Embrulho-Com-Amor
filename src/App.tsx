@@ -9,6 +9,7 @@ import EmbrulhoComAmor from "./pages/EmbrulhoComAmor";
 import CestaDetalhe from "./pages/CestaDetalhe";
 import Pagamento from "./pages/Pagamento";
 import ConfirmacaoPagamento from "./pages/ConfirmacaoPagamento";
+import Footer from "@/components/Footer";
 
 const queryClient = new QueryClient();
 
@@ -27,6 +28,7 @@ const App = () => (
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
+        <Footer />
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
