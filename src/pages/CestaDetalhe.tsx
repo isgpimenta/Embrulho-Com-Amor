@@ -1,5 +1,5 @@
 import { useParams, useNavigate } from "react-router-dom";
-import { Gift, Sparkles, Palette, ArrowLeft } from "lucide-react";
+import { Gift, Sparkles, Palette, ArrowLeft, ShoppingCart } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
@@ -129,6 +129,19 @@ export const CestaDetalhe = () => {
                   </li>
                 ))}
               </ul>
+
+              {/* Botão de Comprar exclusivo para Cesta Um */}
+              {theme.id === "classic" && (
+                <div className="mt-8 flex justify-center">
+                  <Button
+                    size="lg"
+                    className="bg-rose-500 hover:bg-rose-600 text-white rounded-full px-8 py-6 text-lg group"
+                  >
+                    Comprar
+                    <ShoppingCart className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+                  </Button>
+                </div>
+              )}
             </div>
           </CardContent>
         </Card>
