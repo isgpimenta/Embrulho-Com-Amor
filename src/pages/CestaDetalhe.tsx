@@ -136,6 +136,7 @@ export const CestaDetalhe = () => {
                   <Button
                     size="lg"
                     className="bg-rose-500 hover:bg-rose-600 text-white rounded-full px-8 py-6 text-lg group"
+                    onClick={() => navigate("/pagamento")}
                   >
                     Comprar
                     <ShoppingCart className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
