@@ -70,25 +70,26 @@ const CestasPersonalizadas = () => {
             <CardHeader className="bg-gradient-to-r from-gray-50 to-gray-100">
               <CardTitle className="flex items-center gap-2">
                 <Package className="w-5 h-5 text-gray-500" />
-                Visualização da Cesta
+                Catálogo
               </CardTitle>
-              <CardDescription>Veja como ficará sua cesta</CardDescription>
+              <CardDescription>Veja como ficará sua cesta no catálogo</CardDescription>
             </CardHeader>
             <CardContent className="flex flex-col items-center justify-center py-12">
-              <div 
+              <div
                 className={cn(
                   "relative w-64 h-64 rounded-xl shadow-2xl transition-all duration-700 transform hover:scale-105",
-                  isWrapped && "animate-bounce"
+                  isWrapped && "animate-bounce",
                 )}
               >
                 {/* Basket */}
-                <div className={cn(
-                  "absolute inset-0 rounded-xl shadow-lg flex items-center justify-center",
-                  selectedTheme.accent
-                )}
-                style={{
-                  background: `linear-gradient(135deg, ${selectedTheme.colors})`
-                }}
+                <div
+                  className={cn(
+                    "absolute inset-0 rounded-xl shadow-lg flex items-center justify-center",
+                    selectedTheme.accent,
+                  )}
+                  style={{
+                    background: `linear-gradient(135deg, ${selectedTheme.colors})`,
+                  }}
                 >
                   <div className="text-white text-center p-4">
                     <Package className="w-16 h-16 mx-auto mb-4 opacity-90" />
@@ -97,20 +98,25 @@ const CestasPersonalizadas = () => {
                 </div>
 
                 {/* Ribbon */}
-                <div className={cn(
-                  "absolute -top-2 left-1/2 -translate-x-1/2 w-20 h-8 rounded-full shadow-md",
-                  selectedRibbon.color                )}
+                <div
+                  className={cn(
+                    "absolute -top-2 left-1/2 -translate-x-1/2 w-20 h-8 rounded-full shadow-md",
+                    selectedRibbon.color,
+                  )}
                 />
-                <div className={cn(
-                  "absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 w-8 h-20 rounded-full shadow-md",
-                  selectedRibbon.color                )}
+                <div
+                  className={cn(
+                    "absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 w-8 h-20 rounded-full shadow-md",
+                    selectedRibbon.color,
+                  )}
                 />
 
                 {/* Bow */}
-                <div className={cn(
-                  "absolute -top-4 left-1/2 -translate-x-1/2 w-12 h-12 rounded-full shadow-lg flex items-center justify-center",
-                  selectedRibbon.color
-                )}
+                <div
+                  className={cn(
+                    "absolute -top-4 left-1/2 -translate-x-1/2 w-12 h-12 rounded-full shadow-lg flex items-center justify-center",
+                    selectedRibbon.color,
+                  )}
                 >
                   <Heart className="w-6 h-6 text-white" />
                 </div>
