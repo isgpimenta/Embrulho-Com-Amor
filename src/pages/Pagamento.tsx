@@ -7,6 +7,11 @@ import { ArrowLeft } from "lucide-react";
 const Pagamento = () => {
   const navigate = useNavigate();
 
+  const handleSelect = (method: string) => {
+    // Por enquanto, apenas navega para a página de confirmação
+    navigate("/confirmacao-pagamento");
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 flex items-center justify-center p-4">
       <Card className="w-full max-w-md">
@@ -17,7 +22,7 @@ const Pagamento = () => {
           <Button
             variant="outline"
             className="w-full flex items-center justify-center gap-2"
-            onClick={() => alert("Pagamento com cartão ainda não implementado")}
+            onClick={() => handleSelect("cartao")}
           >
             <CreditCard className="w-5 h-5" />
             Cartão de Crédito/Débito
@@ -25,7 +30,7 @@ const Pagamento = () => {
           <Button
             variant="outline"
             className="w-full flex items-center justify-center gap-2"
-            onClick={() => alert("Pagamento com Pix ainda não implementado")}
+            onClick={() => handleSelect("pix")}
           >
             <Wallet className="w-5 h-5" />
             Pix
