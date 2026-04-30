@@ -8,18 +8,21 @@ const basketThemes = [
   {
     id: "classic",
     name: "Cesta Um",
+    price: "R$ 199,90",
     colors: ["#fef3c7", "#fde68a"],
     icon: Gift,
   },
   {
     id: "modern",
     name: "Cesta Dois",
+    price: "R$ 299,90",
     colors: ["#1e293b", "#0f172a"],
     icon: Sparkles,
   },
   {
     id: "minimal",
     name: "Cesta Três",
+    price: "R$ 149,90",
     colors: ["#e5e7eb", "#d1d5db"],
     icon: Palette,
   },
@@ -63,9 +66,10 @@ export const CestaDetalhe = () => {
 
         <Card className="overflow-hidden border-2 border-dashed border-gray-200">
           <CardHeader className="bg-gradient-to-r from-gray-50 to-gray-100">
-            <CardTitle className="flex items-center gap-2">
+            <CardTitle className="flex flex-col items-center gap-2">
               <Icon className="w-5 h-5 text-gray-500" />
-              {theme.name}
+              <span>{theme.name}</span>
+              <span className="text-sm text-gray-600">{theme.price}</span>
             </CardTitle>
           </CardHeader>
           <CardContent className="flex flex-col items-center py-12">

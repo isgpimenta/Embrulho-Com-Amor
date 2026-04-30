@@ -8,18 +8,21 @@ const basketThemes = [
   {
     id: "classic",
     name: "Cesta Um",
+    price: "R$ 199,90",
     colors: ["#fef3c7", "#fde68a"],
     icon: Gift,
   },
   {
     id: "modern",
     name: "Cesta Dois",
+    price: "R$ 299,90",
     colors: ["#1e293b", "#0f172a"],
     icon: Sparkles,
   },
   {
     id: "minimal",
     name: "Cesta Três",
+    price: "R$ 149,90",
     colors: ["#e5e7eb", "#d1d5db"],
     icon: Palette,
   },
@@ -66,10 +69,12 @@ const CestasPersonalizadas = () => {
                   >
                     <theme.icon className="w-6 h-6 text-white" />
                   </div>
-                  {/* Show the basket name instead of a number */}
+                  {/* Basket name */}
                   <span className="text-lg font-bold text-gray-800">
                     {theme.name}
                   </span>
+                  {/* Price below the name */}
+                  <span className="text-sm text-gray-600">{theme.price}</span>
                   {selectedTheme.id === theme.id && (
                     <CheckCircle className="w-4 h-4 text-gray-500" />
                   )}
