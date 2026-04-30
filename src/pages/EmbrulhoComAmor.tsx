@@ -16,7 +16,7 @@ const basketThemes = [
   {
     id: "modern",
     name: "Cesta Dois",
-    price: "R$ 299,90",
+    price: "R$ 120,00",
     colors: ["#1e293b", "#0f172a"],
     icon: Sparkles,
     image: "/cesta 2.jpeg",
