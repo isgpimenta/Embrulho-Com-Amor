@@ -14,7 +14,7 @@ const Index = () => {
         <img 
           src="/logo-embrulho.jpeg" 
           alt="Logo Embrulho Com Amor" 
-          className="mx-auto mt-4 w-48 h-auto object-contain rounded-lg"
+          className="mx-auto mt-6 w-72 md:w-96 h-auto object-contain"
         />
         <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-clip-text text-transparent text-black">
           Embrulho Com Amor
