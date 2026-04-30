@@ -68,7 +68,7 @@ const CestasPersonalizadas = () => {
                     <img
                       src={theme.image}
                       alt={theme.name}
-                      className="w-20 h-20 rounded-lg object-cover flex-shrink-0"
+                      className="w-20 h-20 rounded-lg object-contain flex-shrink-0 bg-gray-50"
                     />
                   ) : (
                     <div

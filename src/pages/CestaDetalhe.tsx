@@ -80,12 +80,13 @@ export const CestaDetalhe = () => {
               <img
                 src={theme.image}
                 alt={theme.name}
-                className="w-full max-w-lg h-80 md:h-96 rounded-xl object-cover shadow-2xl transition-all duration-700 transform hover:scale-105"
+                className="w-full max-w-lg rounded-xl object-contain shadow-2xl transition-all duration-700 transform hover:scale-105"
               />
             ) : (
               <div
                 className={cn(
-                  "relative w-full max-w-lg h-80 md:h-96 rounded-xl shadow-2xl transition-all duration-700 transform hover:scale-105",
+                  "relative w-full max-w-lg rounded-xl shadow-2xl transition-all duration-700 transform hover:scale-105",
+                  "h-80 md:h-96",
                 )}
                 style={{
                   background: `linear-gradient(135deg, ${theme.colors[0]}, ${theme.colors[1]})`,
