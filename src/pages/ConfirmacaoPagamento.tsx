@@ -1,10 +1,17 @@
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft } from "lucide-react";
 
 const ConfirmacaoPagamento = () => {
   const navigate = useNavigate();
+  const location = useLocation();
+
+  // Obtém o parâmetro de query ?method=...
+  const params = new URLSearchParams(location.search);
+  const method = params.get("method");
+
+  const showPixKey = method === "pix";
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 flex items-center justify-center p-4">
@@ -14,10 +21,12 @@ const ConfirmacaoPagamento = () => {
         </CardHeader>
         <CardContent className="text-center space-y-4">
           <p className="text-gray-600">Seleção de pagamento confirmada.</p>
-          {/* Texto da chave Pix */}
-          <p className="text-lg font-medium text-gray-800">
-            Chave Pix (e‑mail): <span className="text-rose-600">joycebernardo07@gmail.com</span>
-          </p>
+
+          {showPixKey && (
+            <p className="text-lg font-medium text-gray-800">
+              Chave Pix (e‑mail): <span className="text-rose-600">joycebernardo07@gmail.com</span>
+            </p>
+          )}
 
           <Button
             variant="ghost"

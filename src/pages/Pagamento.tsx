@@ -8,8 +8,8 @@ const Pagamento = () => {
   const navigate = useNavigate();
 
   const handleSelect = (method: string) => {
-    // Por enquanto, apenas navega para a página de confirmação
-    navigate("/confirmacao-pagamento");
+    // Envia o método escolhido como query string
+    navigate(`/confirmacao-pagamento?method=${method}`);
   };
 
   return (
