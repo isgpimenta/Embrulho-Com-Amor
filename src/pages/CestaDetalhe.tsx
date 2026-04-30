@@ -73,24 +73,24 @@ export const CestaDetalhe = () => {
               <span className="text-sm text-gray-600">{theme.price}</span>
             </CardTitle>
           </CardHeader>
-          <CardContent className="flex flex-col items-center py-12">
+          <CardContent className="flex flex-col items-center py-16">
             {theme.image ? (
               <img 
                 src={theme.image} 
                 alt={theme.name} 
-                className="w-64 h-64 rounded-xl object-cover shadow-2xl transition-all duration-700 transform hover:scale-105"
+                className="w-full max-w-lg h-80 md:h-96 rounded-xl object-cover shadow-2xl transition-all duration-700 transform hover:scale-105"
               />
             ) : (
               <div
                 className={cn(
-                  "relative w-64 h-64 rounded-xl shadow-2xl transition-all duration-700 transform hover:scale-105",
+                  "relative w-full max-w-lg h-80 md:h-96 rounded-xl shadow-2xl transition-all duration-700 transform hover:scale-105",
                 )}
                 style={{
                   background: `linear-gradient(135deg, ${theme.colors[0]}, ${theme.colors[1]})`,
                 }}
               >
-                <Icon className="w-16 h-16 text-white mx-auto mt-12" />
-                <p className="mt-4 text-center text-white font-semibold">
+                <Icon className="w-20 h-20 text-white mx-auto mt-16" />
+                <p className="mt-4 text-center text-white font-semibold text-xl">
                   {theme.name}
                 </p>
               </div>

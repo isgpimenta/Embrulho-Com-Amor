@@ -40,7 +40,7 @@ const CestasPersonalizadas = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 py-12 px-4">
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-3xl mx-auto">
         <Card>
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
@@ -50,13 +50,13 @@ const CestasPersonalizadas = () => {
             <CardDescription>Selecione uma cesta pelo número</CardDescription>
           </CardHeader>
           <CardContent>
-            <div className="grid grid-cols-3 gap-4">
+            <div className="grid grid-cols-1 gap-6">
               {basketThemes.map((theme) => (
                 <button
                   key={theme.id}
                   onClick={() => handleSelect(theme)}
                   className={cn(
-                    "p-4 rounded-xl border-2 transition-all hover:shadow-md flex flex-col items-center gap-2",
+                    "p-6 rounded-xl border-2 transition-all hover:shadow-md flex flex-row items-center gap-4 w-full text-left",
                     selectedTheme.id === theme.id
                       ? "border-gray-500 bg-gray-50"
                       : "border-gray-200 hover:border-gray-300",
@@ -66,24 +66,26 @@ const CestasPersonalizadas = () => {
                     <img 
                       src={theme.image} 
                       alt={theme.name} 
-                      className="w-12 h-12 rounded-lg object-cover"
+                      className="w-20 h-20 rounded-lg object-cover flex-shrink-0"
                     />
                   ) : (
                     <div
-                      className="w-12 h-12 rounded-lg flex items-center justify-center"
+                      className="w-20 h-20 rounded-lg flex items-center justify-center flex-shrink-0"
                       style={{
                         background: `linear-gradient(135deg, ${theme.colors[0]}, ${theme.colors[1]})`,
                       }}
                     >
-                      <theme.icon className="w-6 h-6 text-white" />
+                      <theme.icon className="w-10 h-10 text-white" />
                     </div>
                   )}
-                  <span className="text-lg font-bold text-gray-800">
-                    {theme.name}
-                  </span>
-                  <span className="text-sm text-gray-600">{theme.price}</span>
+                  <div className="flex flex-col flex-1">
+                    <span className="text-xl font-bold text-gray-800">
+                      {theme.name}
+                    </span>
+                    <span className="text-base text-gray-600">{theme.price}</span>
+                  </div>
                   {selectedTheme.id === theme.id && (
-                    <CheckCircle className="w-4 h-4 text-gray-500" />
+                    <CheckCircle className="w-5 h-5 text-gray-500 flex-shrink-0" />
                   )}
                 </button>
               ))}
