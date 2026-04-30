@@ -12,9 +12,13 @@ const ConfirmacaoPagamento = () => {
         <CardHeader className="flex flex-col items-center">
           <CardTitle className="text-2xl font-bold">Confirmação de pagamento</CardTitle>
         </CardHeader>
-        <CardContent className="text-center">
-          {/* Conteúdo futuro será adicionado aqui */}
-          <p className="text-gray-600 mb-6">Seleção de pagamento confirmada.</p>
+        <CardContent className="text-center space-y-4">
+          <p className="text-gray-600">Seleção de pagamento confirmada.</p>
+          {/* Texto da chave Pix */}
+          <p className="text-lg font-medium text-gray-800">
+            Chave Pix (e‑mail): <span className="text-rose-600">joycebernardo07@gmail.com</span>
+          </p>
+
           <Button
             variant="ghost"
             className="flex items-center gap-2"
